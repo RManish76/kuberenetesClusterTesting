@@ -9,13 +9,6 @@ service:
   type: ClusterIP
   port: 8180
 
-env:
-  - name: KC_HTTP_ENABLED
-    value: "true"
-  - name: KC_HOSTNAME_STRICT
-    value: "false"
-  - name: KC_PROXY
-    value: "edge"
 
 
 admin:
@@ -33,5 +26,6 @@ resources:
   requests:
     cpu: 500m
     memory: 512Mi
+
 
 
