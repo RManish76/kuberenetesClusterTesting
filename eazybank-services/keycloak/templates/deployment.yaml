@@ -25,9 +25,17 @@ spec:
           value: {{ .Values.admin.username | quote }}
         - name: KC_BOOTSTRAP_ADMIN_PASSWORD
           value: {{ .Values.admin.password | quote }}
+        - name: KC_HTTP_ENABLED  ##allows mimatched hostname (required on KodeKloud)
+          value: "true"
+        - name: KC_HOSTNAME_STRICT #trun Keycloak over plain HTTP
+          value: "false"
+        - name: KC_PROXY #ensures Keycloak handles request from reverse proxy properly
+          value: "edge"
+
         ports:
         - name: http
           containerPort: {{ .Values.service.port }}
           protocol: TCP
         resources:
           {{ toYaml .Values.resources | nindent 10 }}
+
