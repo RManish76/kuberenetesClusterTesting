@@ -6,8 +6,8 @@ image:
   pullPolicy: IfNotPresent
 
 service:
-  type: LoadBalancer
-  port: 80
+  type: ClusterIP
+  port: 8180
 
 admin:
   username: user
@@ -24,3 +24,4 @@ resources:
   requests:
     cpu: 500m
     memory: 512Mi
+
