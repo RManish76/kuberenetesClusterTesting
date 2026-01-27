@@ -11,8 +11,8 @@ appName: gatewayserver
 replicaCount: 1
 
 image:
-  repository: pdcourse/gatewayserver #image name
-  tag: s17 #image tag
+  repository: eazybytes/gatewayserver #image name
+  tag: s11 #image tag
 
 containerPort: 8072 #container port
 
@@ -29,4 +29,5 @@ config_enabled: true
 discovery_enabled: true
 resouceserver_enabled: true #keycloak related. as only gatewayserver need it. and all other MS does not need it.
 otel_enabled: true
+
 kafka_enabled: false
